@@ -1,0 +1,23 @@
+name: Kubernetes CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  validate:
+    name: Validate Kubernetes Manifests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Validate Kubernetes manifests
+        uses: docker://ghcr.io/yannh/kubeconform:latest
+        with:
+          args: -strict -summary manifests/
