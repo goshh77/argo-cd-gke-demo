@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: nginx
-          image: nginx:latest
+          image: us-central1-docker.pkg.dev/harsha-gcp-505210/argo-cd-demo/nginx-app:latest
           ports:
             - containerPort: 80
