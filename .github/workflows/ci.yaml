@@ -1,3 +1,5 @@
+cd ~/argo-cd-gke-demo
+
 cat > .github/workflows/ci.yaml <<'EOF'
 name: Kubernetes CI
 
