@@ -1,0 +1,13 @@
+apiVersion: networking.gke.io/v1
+kind: GCPBackendPolicy
+metadata:
+  name: nginx-backend-policy
+spec:
+  default:
+    timeoutSec: 40
+    sessionAffinity:
+      type: CLIENT_IP
+  targetRef:
+    group: ""
+    kind: Service
+    name: nginx-service
